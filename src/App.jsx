@@ -1,15 +1,17 @@
-import AddTodo from "./components/AddTodo";
-import Todos from "./components/Todos";
-import "./App.css";
-// import DateFilter from "./components/FilterByDate";
-import FilterByDate from "./components/FilterByDate";
+import CompleteTodo from "./components/CompleteTodo";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Login from "./components/Auth/Login";
+import "./App.css"
 
 function App() {
   return (
     <div className="mt-20">
-      <AddTodo />
-      <FilterByDate />
-      <Todos />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/todo" element={<CompleteTodo />} />
+          <Route path="/" element={<Login/>} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
